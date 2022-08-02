@@ -1,0 +1,90 @@
+body{
+    background-image: url(background.png); 
+    background-repeat: no-repeat; 
+    background-size:cover;
+}
+.container-grid{
+    display: grid;
+    grid-template-columns: 29% 69%;
+    grid-template-rows: 98%;        
+    border: 1px solid black;    
+    justify-content: center;
+    align-content: center;
+}
+.left-bar{
+    border: 1px solid red;
+    
+}
+.right-bar{
+    border: 1px solid blue;
+    
+}
+.profile{
+    background-color: rgb(240, 242, 245);
+    height: 8%;
+}
+.alerts{
+    background-color: rgb(112, 187, 230);
+    height: 12%;
+}
+.search{
+    background-color: white;
+    height: 5%;
+    text-align: center;
+    padding-top: 10px;
+}
+#search-bar{
+    border: none;
+    width: 90%;
+    font-size: 18px;
+}
+#search-icon{
+    border: 1px solid;
+    padding: 4px;
+    border-radius: 4px;
+    
+}
+.contacts{
+    background-color: white;
+    height: 74%;
+    overflow: auto;
+}
+.contacts div{
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    grid-template-rows: 50% 50%;
+    border: 1px solid gainsboro;
+    height: 12%;
+}
+.contacts div img{
+    grid-row: 1 / span 2;
+    border: 1px solid ;
+    width: 90%;
+    height: 90%;
+    border-radius: 100%;
+}
+.contacts div span{/*solo para ver el grid*/
+    border: 1px solid ;
+}
+.font-small{
+    font-size: small;
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+  
+::-webkit-scrollbar-track {
+    background: white; 
+}
+   
+::-webkit-scrollbar-thumb {
+    background: rgb(207, 208, 209); 
+}
+.head-chat{
+    background-color: rgb(240, 242, 245);
+    height: 8%;
+}
+.msj{
+    background-image: url(background-chat.jpg);
+    height: 92%;
+}
