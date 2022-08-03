@@ -12,72 +12,85 @@
                 <div class="profile"></div>
                 <div class="alerts"></div>
                 <div class="search">
-                    <span id="search-icon">&#128269;<input type="text" name="" id="search-bar" placeholder=""></span>
+                    <div class="search-bar">
+                        <button type="button" id="search-button">&#128269;</button>
+                        <div id="search-text" contenteditable="true"></div>                        
+                    </div>
                 </div>
                 <div class="contacts">                    
-                    <div>
+                    <div data-user-name="aria">
                         <img src="perfil1.png" alt="">
                         <span>Aria</span>
                         <span class="font-small">19:00</span>
                         <span class="font-small">mensaje nuevo</span>
                         <span class="font-small">nuevos</span>
                     </div>                    
-                    <div><img src="perfil3.png" alt="">
-                        <span>Toño</span>
+                    <div data-user-name="Carlos">
+                        <img src="perfil3.png" alt="">
+                        <span>Carlos</span>
                         <span class="font-small">19:00</span>
                         <span class="font-small">mensaje nuevo</span>
                         <span class="font-small">nuevos</span>
                     </div>                    
-                    <div><img src="perfil2.png" alt="">
+                    <div data-user-name="Pedro">
+                        <img src="perfil2.png" alt="">
+                        <span>Pedro</span>
+                        <span class="font-small">19:00</span>
+                        <span class="font-small">mensaje nuevo</span>
+                        <span class="font-small">nuevos</span>
+                    </div>                    
+                    <div data-user-name="+524426847591">
+                        <img src="perfil2.png" alt="">
+                        <span>+524426847591</span>
+                        <span class="font-small">19:00</span>
+                        <span class="font-small">mensaje nuevo</span>
+                        <span class="font-small">nuevos</span>
+                    </div>                    
+                    <div data-user-name="+521111111111">
+                        <img src="perfil2.png" alt="">
+                        <span>+521111111111</span>
+                        <span class="font-small">19:00</span>
+                        <span class="font-small">mensaje nuevo</span>
+                        <span class="font-small">nuevos</span>
+                    </div>                    
+                    <div data-user-name="+525555555555">
+                        <img src="perfil2.png" alt="">
+                        <span>+525555555555</span>
+                        <span class="font-small">19:00</span>
+                        <span class="font-small">mensaje nuevo</span>
+                        <span class="font-small">nuevos</span>
+                    </div>                    
+                    <div data-user-name="Equipo">
+                        <img src="perfil2.png" alt="">
                         <span>Equipo</span>
                         <span class="font-small">19:00</span>
                         <span class="font-small">mensaje nuevo</span>
                         <span class="font-small">nuevos</span>
                     </div>                    
-                    <div><img src="perfil2.png" alt="">
-                        <span>Equipo</span>
+                    <div data-user-name="carros">
+                        <img src="perfil2.png" alt="">
+                        <span>carros</span>
                         <span class="font-small">19:00</span>
                         <span class="font-small">mensaje nuevo</span>
                         <span class="font-small">nuevos</span>
                     </div>                    
-                    <div><img src="perfil2.png" alt="">
-                        <span>Equipo</span>
+                    <div data-user-name="+57">
+                        <img src="perfil2.png" alt="">
+                        <span>+57</span>
                         <span class="font-small">19:00</span>
                         <span class="font-small">mensaje nuevo</span>
                         <span class="font-small">nuevos</span>
                     </div>                    
-                    <div><img src="perfil2.png" alt="">
-                        <span>Equipo</span>
+                    <div data-user-name="+78">
+                        <img src="perfil2.png" alt="">
+                        <span>+78</span>
                         <span class="font-small">19:00</span>
                         <span class="font-small">mensaje nuevo</span>
                         <span class="font-small">nuevos</span>
                     </div>                    
-                    <div><img src="perfil2.png" alt="">
-                        <span>Equipo</span>
-                        <span class="font-small">19:00</span>
-                        <span class="font-small">mensaje nuevo</span>
-                        <span class="font-small">nuevos</span>
-                    </div>                    
-                    <div><img src="perfil2.png" alt="">
-                        <span>Equipo</span>
-                        <span class="font-small">19:00</span>
-                        <span class="font-small">mensaje nuevo</span>
-                        <span class="font-small">nuevos</span>
-                    </div>                    
-                    <div><img src="perfil2.png" alt="">
-                        <span>Equipo</span>
-                        <span class="font-small">19:00</span>
-                        <span class="font-small">mensaje nuevo</span>
-                        <span class="font-small">nuevos</span>
-                    </div>                    
-                    <div><img src="perfil2.png" alt="">
-                        <span>Equipo</span>
-                        <span class="font-small">19:00</span>
-                        <span class="font-small">mensaje nuevo</span>
-                        <span class="font-small">nuevos</span>
-                    </div>                    
-                    <div><img src="perfil2.png" alt="">
-                        <span>Equipo</span>
+                    <div data-user-name="+58">
+                        <img src="perfil2.png" alt="">
+                        <span>+58</span>
                         <span class="font-small">19:00</span>
                         <span class="font-small">mensaje nuevo</span>
                         <span class="font-small">nuevos</span>
@@ -88,8 +101,50 @@
                 <div class="head-chat">
 
                 </div>
-                <div class="msj" id="msjs">
+                <div class="msj" id="msjs" data-user-msjs="aria">
+                    <div class="msj-mine msj-format">hola</div>
+                    <div class="msj-mine msj-format">hola</div>
+                    <div class="msj-mine msj-format">hola</div>
+                    <div class="msj-mine msj-format">hola</div>
+                    <div class="msj-mine msj-format">hola</div>
+                    <div class="msj-yours msj-format">Adios</div>
+                    <div class="msj-yours msj-format">Adios</div>
+                    <div class="msj-yours msj-format">Adios</div>
+                    <div class="msj-yours msj-format">Adios</div>
+                    <div class="msj-yours msj-format">Adios</div>
+                    <div class="msj-mine msj-format">hola</div>
+                    <div class="msj-mine msj-format">hola</div>
+                    <div class="msj-yours msj-format">Adios</div>
+                    <div class="msj-yours msj-format">Adios</div>
+                    <div class="msj-yours msj-format">Adios</div>
+                    <div class="msj-mine msj-format">hola</div>
+                    <div class="msj-mine msj-format">hola</div>
+                    <div class="msj-yours msj-format">Adios</div>
+                    <div class="msj-mine msj-format">hola</div>
+                    <div class="msj-mine msj-format">hola</div>
+                    <div class="msj-yours msj-format">Adios</div>
+                    <div class="msj-yours msj-format">Adios</div>
+                    <div class="msj-yours msj-format">Adios</div>
+                    <div class="msj-mine msj-format">hola</div>
+                    <div class="msj-mine msj-format">hola</div>
+                    <div class="msj-yours msj-format">Adios</div>
+                    <div class="msj-mine msj-format">hola</div>
+                    <div class="msj-mine msj-format">hola</div>
+                    <div class="msj-yours msj-format">Adios</div>
+                    <div class="msj-yours msj-format">Adios</div>
+                    <div class="msj-yours msj-format">Adios</div>
+                    <div class="msj-mine msj-format">hola</div>
+                    <div class="msj-mine msj-format">hola</div>
+                    <div class="msj-yours msj-format">Adios</div>
 
+                </div>
+                <div class="footer-chat">
+                    <div class="footer-bar">
+                        <button type="button" class="footer-button">&#128515;</button>
+                        <button type="button" class="footer-button">&#128206;</button>
+                        <div contenteditable="true" id="footer-msj">hola</div>
+                        <button type="button" class="footer-button">&#127908;</button>
+                    </div>
                 </div>
             </div>
         </div>
