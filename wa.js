@@ -5,25 +5,26 @@ class MsjObject {
     constructor(user, msj) {
         this.user = user;
         this.msj = msj;
-        this.date = new Date();
+        this.hour = new Date().getHours();
+        this.minutes = new Date().getMinutes();
     }
 }
 let conversations = new Map();
 conversations.set(
     "Aria",
-    '[{"user":1,"msj":"Hola Como estas?","date":"2022-08-03T20:27:57.432Z"},{"user":1,"msj":"que estas haciendo","date":"2022-08-03T20:27:57.432Z"},{"user":2,"msj":"Hola hola, bien y tu?","date":"2022-08-03T20:27:57.432Z"},{"user":2,"msj":"iba a comer algo","date":"2022-08-03T20:27:57.432Z"}]'
+    '[{"user":1,"msj":"Hola como estas","hour":18,"minutes":51},{"user":2,"msj":"Hola que milagrro","hour":18,"minutes":51},{"user":2,"msj":"bien gracias y tu??","hour":18,"minutes":51},{"user":1,"msj":"tambien bien gracias","hour":18,"minutes":51}]'
 );
 conversations.set(
     "Carlos",
-    '[{"user":1,"msj":"Que onda we","date":"2022-08-03T20:29:57.432Z"},{"user":1,"msj":"que te dijeron?","date":"2022-08-03T20:50:57.432Z"},{"user":2,"msj":"Hola hola, bien y tu?","date":"2022-08-03T20:27:57.432Z"},{"user":2,"msj":"iba a comer algo","date":"2022-08-03T20:27:57.432Z"}]'
+    '[{"user":2,"msj":"Que onda we","hour":13,"minutes":18},{"user":2,"msj":"que paso we como andas","hour":14,"minutes":00},{"user":2,"msj":"pos mas o menos","hour":14,"minutes":01},{"user":1,"msj":"y eso??","hour":14,"minutes":11}]'
 );
 conversations.set(
     "Pedro",
-    '[{"user":1,"msj":"Que dices primo?","date":"2022-08-03T20:30:57.432Z"},{"user":1,"msj":"donde es eso?","date":"2022-08-03T21:10:57.432Z"},{"user":2,"msj":"Hola hola, bien y tu?","date":"2022-08-03T20:27:57.432Z"},{"user":2,"msj":"iba a comer algo","date":"2022-08-03T20:27:57.432Z"}]'
+    '[{"user":1,"msj":"Que onda Primo","hour":11,"minutes":51},{"user":2,"msj":"que dices primo","hour":11,"minutes":52},{"user":2,"msj":"oye tienes el cel de mi tia que me pases","hour":12,"minutes":15},{"user":1,"msj":"si, ahorita te lo mando","hour":12,"minutes":17}]'
 );
 conversations.set(
     "+524426847591",
-    '[{"user":1,"msj":"Quien eres?","date":"2022-08-03T20:40:57.432Z"},{"user":1,"msj":"no veo tu foto de perfil","date":"2022-08-03T21:15:57.432Z"},{"user":2,"msj":"Hola hola, bien y tu?","date":"2022-08-03T20:27:57.432Z"},{"user":2,"msj":"iba a comer algo","date":"2022-08-03T20:27:57.432Z"}]'
+    '[{"user":2,"msj":"Hola como estas","hour":20,"minutes":51},{"user":1,"msj":"Quien eres??, no te tengo agregado","hour":21,"minutes":00},{"user":1,"msj":"no veo tu foto de perfil tampoco","hour":21,"minutes":02},{"user":2,"msj":"hola????","hour":21,"minutes":20}]'
 );
 function chargeHead(element) {
     let head = document.getElementById("info-head");
@@ -55,13 +56,18 @@ function chargeMsjs(element) {
     divMsj.innerHTML = "";
     divMsj.setAttribute("data-user-name", name);
     let divEachMsj = null;
+    let spanTime = null;
     for (const iterator of msj) {
         divEachMsj = document.createElement("div");
+        spanTime = document.createElement("span");
         iterator.user == 1
             ? (divEachMsj.className = "msj-mine msj-format")
             : (divEachMsj.className = "msj-yours msj-format");
 
         divEachMsj.innerHTML = `${iterator.msj}`;
+        spanTime.className = "msj-time";
+        spanTime.innerHTML = iterator.hour + ":" + iterator.minutes;
+        divEachMsj.appendChild(spanTime);
         divMsj.appendChild(divEachMsj);
     }
     chargeHead(element);
