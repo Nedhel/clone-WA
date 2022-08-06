@@ -16,7 +16,7 @@ conversations.set(
 );
 conversations.set(
     "Carlos",
-    '[{"user":2,"msj":"Que onda we","hour":13,"minutes":18},{"user":2,"msj":"que paso we como andas","hour":14,"minutes":00},{"user":2,"msj":"pos mas o menos","hour":14,"minutes":01},{"user":1,"msj":"y eso??","hour":14,"minutes":11}]'
+    '[{"user":1,"msj":"Que onda we","hour":18,"minutes":51},{"user":2,"msj":"que onda que paso??","hour":18,"minutes":54},{"user":2,"msj":"sigues estudiando??","hour":18,"minutes":58},{"user":1,"msj":"simon, ya te dijeron algo de alla?","hour":19,"minutes":20}]'
 );
 conversations.set(
     "Pedro",
@@ -24,7 +24,7 @@ conversations.set(
 );
 conversations.set(
     "+524426847591",
-    '[{"user":2,"msj":"Hola como estas","hour":20,"minutes":51},{"user":1,"msj":"Quien eres??, no te tengo agregado","hour":21,"minutes":00},{"user":1,"msj":"no veo tu foto de perfil tampoco","hour":21,"minutes":02},{"user":2,"msj":"hola????","hour":21,"minutes":20}]'
+    '[{"user":2,"msj":"Hola que tal??","hour":8,"minutes":51},{"user":1,"msj":"Hola, quien eres?","hour":8,"minutes":52},{"user":1,"msj":"no veo tu foto de perfil","hour":9,"minutes":15},{"user":1,"msj":"hola???","hour":10,"minutes":17}]'
 );
 function chargeHead(element) {
     let head = document.getElementById("info-head");
@@ -70,6 +70,7 @@ function chargeMsjs(element) {
         divEachMsj.appendChild(spanTime);
         divMsj.appendChild(divEachMsj);
     }
+    divMsj.scrollBy(0, divMsj.scrollHeight);
     chargeHead(element);
     saveMsjs();
 }
@@ -81,6 +82,7 @@ function sendMsj(user, msj) {
         : (divEachMsj.className = "msj-yours msj-format");
     divEachMsj.innerHTML = `${msj}`;
     divMsj.appendChild(divEachMsj);
+    divMsj.scrollBy(0, 100);
 }
 function reciveMsj(user, msj) {
     const currentUser = document
@@ -91,9 +93,38 @@ function reciveMsj(user, msj) {
 function notification(user) {}
 function saveMsjs() {}
 
+function changeIcon(element) {
+    if (element.target.id == "footer-msj") {
+        if (element.target.value == "") {
+            document.getElementById("button-msj").innerHTML = "&#127908;";
+        } else {
+            document.getElementById("button-msj").innerHTML = "&#10148;";
+        }
+    } else {
+        document.getElementById("search-button").innerHTML = "&#8656;";
+    }
+}
+function checkKey(event) {
+    if (event.key == "Enter") {
+        event.preventDefault();
+        sendMsj(1, document.getElementById("footer-msj").value);
+        document.getElementById("footer-msj").value = "";
+        document.getElementById("button-msj").innerHTML = "&#127908;";
+    }
+}
+
 window.addEventListener("load", () => {
     let contacts = document.getElementById("contacts-list").children;
     for (const iterator of contacts) {
         iterator.addEventListener("click", chargeMsjs);
     }
+    document.getElementById("footer-msj").addEventListener("input", changeIcon);
+    document.getElementById("footer-msj").addEventListener("keydown", checkKey);
+    document
+        .getElementById("search-text")
+        .addEventListener("input", changeIcon);
+
+    document
+        .getElementById("msjs")
+        .scrollBy(0, document.getElementById("msjs").scrollHeight);
 });

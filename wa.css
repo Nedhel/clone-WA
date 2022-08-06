@@ -7,16 +7,16 @@ body{
     display: grid;
     grid-template-columns: 29% 69%;
     grid-template-rows: 98%;        
-    border: 1px solid black;    
+    /*border: 1px solid black; */   
     justify-content: center;
     align-content: center;
 }
 .left-bar{
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     
 }
 .right-bar{
-    border: 1px solid blue;
+    /*border: 1px solid blue;*/
     
 }
 .profile{
@@ -67,17 +67,18 @@ body{
     display: grid;
     grid-template-columns: 15% 70% 15%;
     grid-template-rows: 50% 50%;
-    border: 1px solid rgb(220, 15, 15);
+    /*border: 1px solid rgb(220, 15, 15);*/
+    border-bottom: 1px solid gainsboro;
     height: 12%;
 }
 .contact-img{
     grid-row: 1 / span 2;
-    border: 1px solid ;
+    /*border: 1px solid ;*/
     width: 90%;
     height: 90%;
     border-radius: 100%;
 }
-.contacts div span{/*solo para ver el grid*/
+.contacts div span{/*solo para ver el grid ya no se usa*/
     border: 1px solid ;
 }
 .font-small{
@@ -110,11 +111,11 @@ body{
     display: grid;
     grid-template-columns: 7% 78% 15%;
     grid-template-rows: 50% 50%;
-    border: 1px solid rgb(220, 15, 15); 
+    /*border: 1px solid rgb(220, 15, 15); */
 }
 .head-img{
     grid-row: 1 / span 2;
-    border: 1px solid ;
+    /*border: 1px solid ;*/
     width: 70%;
     height: 80%;
     border-radius: 100%;
@@ -128,14 +129,14 @@ body{
     align-self: center;    
 }
 .head-grid > div{
-    border: 1px solid aquamarine;
+    /*border: 1px solid aquamarine;*/
 }
 .msj{
     background-image: url(background-chat.jpg);
     height: 85%;
     display: flex;
     flex-direction: column;
-    border: 1px solid purple;
+    /*border: 1px solid purple;*/
     padding-left: 8%;
     padding-right: 8%;
     overflow: auto;
@@ -161,7 +162,11 @@ body{
     background-color: white;
     border-radius: 6px;
     padding: 10px;
-    font-size: medium;
+    font-size: large;
+    height: 60%;
+    overflow: auto;
+    resize: none;
+    border: none;
 }
 #footer-msj:focus{
     outline: none;
