@@ -1,5 +1,6 @@
 let size = window.innerHeight * 0.97;
 document.getElementById("container").style.height = `${size}px`;
+let currentContact = "+524426847591";
 
 class MsjObject {
     constructor(user, msj) {
@@ -49,6 +50,14 @@ function chargeHead(element) {
     );
 }
 
+function contactSelected(element) {
+    document.getElementById(
+        element.target.getAttribute("data-user-name")
+    ).style.background = "rgb(240, 242, 245)";
+    document.getElementById(currentContact).style.backgroundColor = "";
+    currentContact = element.target.getAttribute("data-user-name");
+}
+
 function chargeMsjs(element) {
     let name = element.target.getAttribute("data-user-name");
     let msj = JSON.parse(conversations.get(name));
@@ -72,7 +81,8 @@ function chargeMsjs(element) {
     }
     divMsj.scrollBy(0, divMsj.scrollHeight);
     chargeHead(element);
-    saveMsjs();
+    contactSelected(element);
+    unNotification(element);
 }
 function sendMsj(user, msj) {
     let divMsj = document.getElementById("msjs");
@@ -88,19 +98,34 @@ function sendMsj(user, msj) {
     divEachMsj.appendChild(spanTime);
     divMsj.appendChild(divEachMsj);
     divMsj.scrollBy(0, 100);
+    stackMsjs(user, msj, divMsj.getAttribute("data-user-name"));
 }
-function reciveMsj(user, msj) {
+function reciveMsj(name, msj) {
     const currentUser = document
         .getElementById("msjs")
         .getAttribute("data-user-name");
-    currentUser === user ? sendMsj(2, msj) : notification(user);
+    if (currentUser === name) {
+        sendMsj(2, msj);
+    } else {
+        notification(name);
+        stackMsjs(2, msj, name);
+    }
 }
-function notification(user) {
+function notification(name) {
     let numNotification =
-        Number(document.getElementById("n" + user).innerHTML) + 1;
-    document.getElementById("n" + user).innerHTML = numNotification;
+        Number(document.getElementById("n" + name).innerHTML) + 1;
+    document.getElementById("n" + name).innerHTML = numNotification;
 }
-function saveMsjs() {}
+function unNotification(element) {
+    let name = element.target.getAttribute("data-user-name");
+    document.getElementById("n" + name).innerHTML = "";
+}
+function stackMsjs(user, msj, name) {
+    let time = new Date();
+    let msjs = conversations.get(name).replace("]", ",");
+    msjs += `{"user":${user},"msj":"${msj}","hour":${time.getHours()},"minutes":${time.getMinutes()}}]`;
+    conversations.set(name, msjs);
+}
 
 function changeIcon(element) {
     if (element.target.id == "footer-msj") {
