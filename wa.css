@@ -22,6 +22,7 @@ body{
 .profile{
     background-color: rgb(240, 242, 245);
     height: 8%;
+    border-right: 1px solid gainsboro;
 }
 .alerts{
     background-color: rgb(112, 187, 230);
@@ -35,9 +36,10 @@ body{
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    border-bottom: 1px solid gainsboro;
 }
 .search-bar{
-    border: none;
+    border:none;
     width: 90%;
     height: 85%;
     font-size: 18px;
@@ -97,7 +99,7 @@ body{
 }
   
 ::-webkit-scrollbar-track {
-    background: white; 
+    background: transparent
 }
    
 ::-webkit-scrollbar-thumb {
@@ -126,7 +128,10 @@ body{
     grid-row: 1 / span 2;
     grid-column: 3;
     justify-self: center;
-    align-self: center;    
+    align-self: center;       
+}
+.head-icons > button{
+    border: none;
 }
 .head-grid > div{
     /*border: 1px solid aquamarine;*/
@@ -199,4 +204,13 @@ body{
     grid-row: 2;
     grid-column: 2;
     font-size: 10px;
+}
+.notification{
+    border-radius: 100px; 
+    background: rgb(101, 208, 114); 
+    min-width: 20px; 
+    display: inline-block; 
+    text-align: center; 
+    color: white;
+    
 }

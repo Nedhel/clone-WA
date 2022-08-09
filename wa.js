@@ -77,10 +77,15 @@ function chargeMsjs(element) {
 function sendMsj(user, msj) {
     let divMsj = document.getElementById("msjs");
     let divEachMsj = document.createElement("div");
+    let spanTime = document.createElement("span");
+    let time = new Date();
     user == 1
         ? (divEachMsj.className = "msj-mine msj-format")
         : (divEachMsj.className = "msj-yours msj-format");
     divEachMsj.innerHTML = `${msj}`;
+    spanTime.className = "msj-time";
+    spanTime.innerHTML = `${time.getHours()}:${time.getMinutes()}`;
+    divEachMsj.appendChild(spanTime);
     divMsj.appendChild(divEachMsj);
     divMsj.scrollBy(0, 100);
 }
@@ -90,7 +95,11 @@ function reciveMsj(user, msj) {
         .getAttribute("data-user-name");
     currentUser === user ? sendMsj(2, msj) : notification(user);
 }
-function notification(user) {}
+function notification(user) {
+    let numNotification =
+        Number(document.getElementById("n" + user).innerHTML) + 1;
+    document.getElementById("n" + user).innerHTML = numNotification;
+}
 function saveMsjs() {}
 
 function changeIcon(element) {
