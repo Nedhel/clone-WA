@@ -25,7 +25,7 @@ body{
     border-right: 1px solid gainsboro;
 }
 .alerts{
-    background-color: rgb(112, 187, 230);
+    background-color: rgb(231, 253 , 243);
     height: 12.5%;
 }
 .search{
@@ -73,12 +73,16 @@ body{
     border-bottom: 1px solid gainsboro;
     height: 12%;
 }
+.contact-grid:hover{
+    background-color: rgb(244, 244, 245);
+}
 .contact-img{
     grid-row: 1 / span 2;
     /*border: 1px solid ;*/
-    width: 90%;
-    height: 90%;
+    width: 70%;
+    height: 70%;
     border-radius: 100%;
+    padding: 5%;
 }
 .contacts div span{/*solo para ver el grid ya no se usa*/
     border: 1px solid ;
