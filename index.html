@@ -3,13 +3,18 @@
     <head>
         <title>WhatsApp</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="wa.css">
-        
+        <link rel="stylesheet" href="css/wa.css"> 
+        <script src="js/wa.js"></script>       
     </head>
     <body>
         <div id='container' class="container-grid">
             <div class="left-bar">
-                <div class="profile"></div>
+                <div class="profile">
+                    <img src="img/Yo.png" alt="" class="profile-img">
+                    <button type="button" id="histories-button">&#128280;</button>
+                    <button type="button" id="newConversation-button">&#128172; </button>
+                    <button type="button" id="option-button">&#9479;</button>
+                </div>
                 <div class="alerts"></div>
                 <div class="search">
                     <div class="search-bar">
@@ -19,88 +24,88 @@
                 </div>
                 <div id="contacts-list" class="contacts">                    
                     <div id="Aria" class="contact-grid">
-                        <img src="Aria.png" alt="" data-user-name="Aria" class="contact-img">
-                        <div data-user-name="Aria">Aria</div>
-                        <div class="font-small center-down" data-user-name="Aria">19:00</div>
-                        <div data-user-name="Aria">mensaje nuevo</div>
-                        <div id="notification-field" data-user-name="Aria"><div id="nAria" class="notification"></div></div>
+                        <img src="img/Aria.png" alt="" data-user-name="Aria" class="contact-img">
+                        <div data-user-name="Aria" class="down">Aria</div>
+                        <div class="font-small center down" data-user-name="Aria" id="Aria-last-time">19:00</div>
+                        <div data-user-name="Aria" id="Aria-last-msj" class="font-small last-msj">mensaje nuevo</div>
+                        <div id="notification-field" data-user-name="Aria"><div id="nAria" class="notification font-small"></div></div>
                         
                     </div>                    
                     <div id="Carlos" class="contact-grid">
-                        <img src="Carlos.png" alt="" data-user-name="Carlos" class="contact-img">
-                        <div data-user-name="Carlos">Carlos</div>
-                        <div class="font-small center-down" data-user-name="Carlos">19:00</div>
-                        <div data-user-name="Carlos">mensaje nuevo</div>
-                        <div id="notification-field" data-user-name="Carlos"><div id="nCarlos" class="notification"></div></div>
+                        <img src="img/Carlos.png" alt="" data-user-name="Carlos" class="contact-img">
+                        <div data-user-name="Carlos" class="down">Carlos</div>
+                        <div class="font-small center down" data-user-name="Carlos" id="Carlos-last-time">19:00</div>
+                        <div data-user-name="Carlos" id="Carlos-last-msj" class="font-small last-msj">mensaje nuevo</div>
+                        <div id="notification-field" data-user-name="Carlos"><div id="nCarlos" class="notification font-small"></div></div>
                     </div>                    
                     <div id="Pedro" class="contact-grid">
-                        <img src="Pedro.png" alt="" data-user-name="Pedro" class="contact-img">
-                        <div data-user-name="Pedro">Pedro</div>
-                        <div class="font-small center-down" data-user-name="Pedro">19:00</div>
-                        <div data-user-name="Pedro">mensaje nuevo</div>
-                        <div id="notification-field" data-user-name="Pedro"><div id="nPedro" class="notification"></div></div>
+                        <img src="img/Pedro.png" alt="" data-user-name="Pedro" class="contact-img">
+                        <div data-user-name="Pedro" class="down">Pedro</div>
+                        <div class="font-small center down" data-user-name="Pedro" id="Pedro-last-time">19:00</div>
+                        <div data-user-name="Pedro" id="Pedro-last-msj" class="font-small last-msj">mensaje nuevo</div>
+                        <div id="notification-field" data-user-name="Pedro"><div id="nPedro" class="notification font-small"></div></div>
                     </div>                    
                     <div id="+524426847591" class="contact-grid">
-                        <img src="+524426847591.png" alt="" data-user-name="+524426847591" class="contact-img">
-                        <div data-user-name="+524426847591">+524426847591</div>
-                        <div class="font-small center-down" data-user-name="+524426847591">19:00</div>
-                        <div data-user-name="+524426847591">mensaje nuevo</div>
-                        <div id="notification-field" data-user-name="+524426847591"><div id="n+524426847591" class="notification"></div></div>
+                        <img src="img/+524426847591.png" alt="" data-user-name="+524426847591" class="contact-img">
+                        <div data-user-name="+524426847591" class="down">+524426847591</div>
+                        <div class="font-small center down" data-user-name="+524426847591" id="+524426847591-last-time">19:00</div>
+                        <div data-user-name="+524426847591" id="+524426847591-last-msj" class="font-small last-msj">mensaje nuevo</div>
+                        <div id="notification-field" data-user-name="+524426847591"><div id="n+524426847591" class="notification font-small"></div></div>
                     </div>                         
                     <div data-user-name="+1111" class="contact-grid">
-                        <img src="+524426847591.png" alt="" data-user-name="+1111" class="contact-img">
-                        <div data-user-name="+1111">+1111</div>
-                        <div class="font-small center-down" data-user-name="+1111">19:00</div>
+                        <img src="img/+524426847591.png" alt="" data-user-name="+1111" class="contact-img">
+                        <div data-user-name="+1111" class="down">+1111</div>
+                        <div class="font-small center down" data-user-name="+1111">19:00</div>
                         <div class="font-small" data-user-name="+1111">mensaje nuevo</div>
-                        <div class="font-small" data-user-name="+1111">nuevos</div>
+                        <div class="font-small" data-user-name="+1111"></div>
                     </div>                         
                     <div data-user-name="+22222" class="contact-grid">
-                        <img src="+524426847591.png" alt="" data-user-name="+22222" class="contact-img">
-                        <div data-user-name="+22222">+22222</div>
-                        <div class="font-small center-down" data-user-name="+22222">19:00</div>
+                        <img src="img/+524426847591.png" alt="" data-user-name="+22222" class="contact-img">
+                        <div data-user-name="+22222" class="down">+22222</div>
+                        <div class="font-small center down" data-user-name="+22222">19:00</div>
                         <div class="font-small" data-user-name="+22222">mensaje nuevo</div>
-                        <div class="font-small" data-user-name="+22222">nuevos</div>
+                        <div class="font-small" data-user-name="+22222"></div>
                     </div>                         
                     <div data-user-name="+33333" class="contact-grid">
-                        <img src="+524426847591.png" alt="" data-user-name="+33333" class="contact-img">
-                        <div data-user-name="+33333">+33333</div>
-                        <div class="font-small center-down" data-user-name="+33333">19:00</div>
+                        <img src="img/+524426847591.png" alt="" data-user-name="+33333" class="contact-img">
+                        <div data-user-name="+33333" class="down">+33333</div>
+                        <div class="font-small center down" data-user-name="+33333">19:00</div>
                         <div class="font-small" data-user-name="+33333">mensaje nuevo</div>
-                        <div class="font-small" data-user-name="+33333">nuevos</div>
+                        <div class="font-small" data-user-name="+33333"></div>
                     </div>                         
                     <div data-user-name="+44444444" class="contact-grid">
-                        <img src="+524426847591.png" alt="" data-user-name="+44444444" class="contact-img">
-                        <div data-user-name="+44444444">+44444444</div>
-                        <div class="font-small center-down" data-user-name="+44444444">19:00</div>
+                        <img src="img/+524426847591.png" alt="" data-user-name="+44444444" class="contact-img">
+                        <div data-user-name="+44444444" class="down">+44444444</div>
+                        <div class="font-small center down" data-user-name="+44444444">19:00</div>
                         <div class="font-small" data-user-name="+44444444">mensaje nuevo</div>
-                        <div class="font-small" data-user-name="+44444444">nuevos</div>
+                        <div class="font-small" data-user-name="+44444444"></div>
                     </div>                         
                     <div data-user-name="+5555555" class="contact-grid">
-                        <img src="+524426847591.png" alt="" data-user-name="+5555555" class="contact-img">
-                        <div data-user-name="+5555555">+5555555</div>
-                        <div class="font-small center-down" data-user-name="+5555555">19:00</div>
+                        <img src="img/+524426847591.png" alt="" data-user-name="+5555555" class="contact-img">
+                        <div data-user-name="+5555555" class="down">+5555555</div>
+                        <div class="font-small center down" data-user-name="+5555555">19:00</div>
                         <div class="font-small" data-user-name="+5555555">mensaje nuevo</div>
-                        <div class="font-small" data-user-name="+5555555">nuevos</div>
+                        <div class="font-small" data-user-name="+5555555"></div>
                     </div>                         
                     <div data-user-name="+467878" class="contact-grid">
-                        <img src="+524426847591.png" alt="" data-user-name="+467878" class="contact-img">
-                        <div data-user-name="+467878">+467878</div>
-                        <div class="font-small center-down" data-user-name="+467878">19:00</div>
+                        <img src="img/+524426847591.png" alt="" data-user-name="+467878" class="contact-img">
+                        <div data-user-name="+467878" class="down">+467878</div>
+                        <div class="font-small center down" data-user-name="+467878">19:00</div>
                         <div class="font-small" data-user-name="+467878">mensaje nuevo</div>
-                        <div class="font-small" data-user-name="+467878">nuevos</div>
+                        <div class="font-small" data-user-name="+467878"></div>
                     </div>                         
 
                 </div>
             </div>
             <div class="right-bar">
                 <div class="head-chat head-grid" id="info-head" data-user-name="+524426847591">                    
-                    <img src="+524426847591.png" alt="" data-user-name="+524426847591" class="head-img">
-                    <div data-user-name="+524426847591">+524426847591</div>
+                    <img src="img/+524426847591.png" alt="" data-user-name="+524426847591" class="head-img">
+                    <div class="down" data-user-name="+524426847591">+524426847591</div>
                     <div class="head-icons">
                         <button type="button">&#128269;</button>
                         <button type="button">&#9479;</button>
                     </div> 
-                    <div class="font-small" data-user-name="+524426847591">mensaje nuevo</div>                                                  
+                    <div class="font-small" data-user-name="+524426847591">Ultima vez</div>                                                  
                 </div>
                 <div class="msj" id="msjs" data-user-name="+524426847591">
                     <div class="msj-mine msj-format">a<span class="msj-time">8:47 p.m.</span></div>
@@ -154,4 +159,3 @@
         
     </body>
 </html>
-<script src="wa.js"></script>
